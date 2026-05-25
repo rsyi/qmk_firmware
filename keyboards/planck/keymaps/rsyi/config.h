@@ -37,3 +37,7 @@
 // Most tactile encoders have detents every 4 stages
 #define ENCODER_RESOLUTION 4
 
+// MT(MOD_RSFT, KC_ENT) on bottom-right Enter: force hold-as-mod, never auto-repeat tap.
+// Replaces legacy TAPPING_FORCE_HOLD.
+#define QUICK_TAP_TERM 0
+
