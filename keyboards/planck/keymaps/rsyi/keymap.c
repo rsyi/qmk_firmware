@@ -101,16 +101,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_RAISE] = LAYOUT_planck_grid(
     _______,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSLS,
-    _______,  _______,   KC_LCBR,   KC_LBRC,   KC_LPRN,   _______,   _______,   KC_RPRN, KC_RBRC, KC_RCBR, KC_GRV, KC_EQL,
+    _______,  _______,   KC_LCBR,   KC_LBRC,   KC_LPRN,   _______,   LCTL(LALT(LGUI(KC_RGHT))),   KC_RPRN, KC_RBRC, KC_RCBR, KC_GRV, KC_EQL,
     /*_______,  _______,   _______,   _______,   _______,   _______,   KC_BSLS,   KC_RPRN, KC_RBRC, KC_RCBR, _______, _______,*/
-    _______,  _______, _______, _______, _______, _______, _______,  _______,  _______, KC_DLR, _______, _______,
+    _______,  _______, _______, _______, _______, _______, LCTL(LALT(KC_RGHT)),  _______,  _______, KC_DLR, _______, _______,
     _______, _______, _______, _______, _______, KC_SPACE, KC_BSPC, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
 ),
 [_SRAISE] = LAYOUT_planck_grid(
     _______,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0, DV_BSLS,
-    _______,  _______,   DV_LCBR,   DV_LBRC,   KC_LPRN,   _______,   _______,   KC_RPRN, DV_RBRC, DV_RCBR, KC_GRV, DV_EQL,
+    _______,  _______,   DV_LCBR,   DV_LBRC,   KC_LPRN,   _______,   LCTL(LALT(LGUI(KC_RGHT))),   KC_RPRN, DV_RBRC, DV_RCBR, KC_GRV, DV_EQL,
     /*_______,  _______,   _______,   _______,   _______,   _______,   KC_BSLS,   KC_RPRN, DV_RBRC, DV_RCBR, _______, _______, */
-    _______, _______, _______, _______, _______, _______, _______,  _______,  _______, KC_DLR, _______, _______,
+    _______, _______, _______, _______, _______, _______, LCTL(LALT(KC_RGHT)),  _______,  _______, KC_DLR, _______, _______,
     _______, _______, _______, _______, _______, KC_SPACE, KC_BSPC, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
 ),
 
@@ -127,14 +127,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_LOWER] = LAYOUT_planck_grid(
     _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  _______, _______,  KC_PERC, KC_CIRC, KC_AMPR,    KC_ASTR,    KC_PIPE,
-    KC_ESC, S(KC_GRV), KC_LCBR, KC_LBRC, KC_LPRN, _______, _______, _______, _______, _______, _______, KC_PLUS,
-    _______, _______, KC_0, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+    KC_ESC, S(KC_GRV), KC_LCBR, KC_LBRC, KC_LPRN, LCTL(LALT(LGUI(KC_LEFT))), _______, _______, _______, _______, _______, KC_PLUS,
+    _______, _______, KC_0, _______, _______, LCTL(LALT(KC_LEFT)), _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, KC_SPC, KC_DEL, _______, LALT(KC_LEFT), KC_PGDN, KC_PGUP, LALT(KC_RGHT)
 ),
 [_SLOWER] = LAYOUT_planck_grid(
     _______, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  _______, _______, KC_PERC, KC_CIRC, KC_AMPR,    KC_ASTR,    DV_PIPE,
-    KC_ESC, S(KC_GRV), DV_LCBR, DV_LBRC, DV_LPRN, _______, _______, _______, _______, _______, _______, DV_PLUS,
-    _______, _______, KC_0, DV_PIPE, KC_BSLS, _______, _______, _______, _______, _______, _______, _______,
+    KC_ESC, S(KC_GRV), DV_LCBR, DV_LBRC, DV_LPRN, LCTL(LALT(LGUI(KC_LEFT))), _______, _______, _______, _______, _______, DV_PLUS,
+    _______, _______, KC_0, DV_PIPE, KC_BSLS, LCTL(LALT(KC_LEFT)), _______, _______, _______, _______, _______, _______,
     _______, _______, _______, _______, _______, KC_SPC, KC_DEL, _______, LALT(KC_LEFT), KC_PGDN, KC_PGUP, LALT(KC_RGHT)
 
 ),
