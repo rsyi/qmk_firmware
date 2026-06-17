@@ -41,3 +41,7 @@
 // Replaces legacy TAPPING_FORCE_HOLD.
 #define QUICK_TAP_TERM 0
 
+// Forgiving window for the Lower+Raise -> maximize combo. Deliberate
+// two-thumb chords land in the 50-150ms range; 200 leaves headroom.
+#define COMBO_TERM 200
+

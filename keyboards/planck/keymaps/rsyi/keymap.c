@@ -151,18 +151,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 [_ADJUST] = LAYOUT_planck_grid(
-    _______, QK_BOOT, DB_TOGG, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, KC_DEL ,
+    _______, QK_BOOT, DB_TOGG, RM_TOGG, RM_NEXT, RM_HUEU, RM_HUED, RM_SATU, RM_SATD,  RM_VALU, RM_VALD, KC_DEL ,
     AU_PREV, AU_NEXT, MU_NEXT, AU_ON,   AU_OFF,  _______, _______, _______,  _______,  _______,  MI_ON,  MI_OFF,
     _______, _______,   KC_MPLY,   KC_MPRV,   KC_MNXT,  KC_BRMD,  KC_BRMU,  KC_VOLD, KC_VOLU, KC_MUTE, _______, _______,
     _______, _______, _______, _______, _______,  DVORAK, SDRK, _______, MU_ON,  MU_OFF, _______, _______
 ),
 [_SADJUST] = LAYOUT_planck_grid(
-    _______, QK_BOOT, DB_TOGG, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, KC_DEL ,
+    _______, QK_BOOT, DB_TOGG, RM_TOGG, RM_NEXT, RM_HUEU, RM_HUED, RM_SATU, RM_SATD,  RM_VALU, RM_VALD, KC_DEL ,
     AU_PREV, AU_NEXT, MU_NEXT, AU_ON,   AU_OFF,  _______, _______, _______,  _______,  _______,  MI_ON,  MI_OFF,
     _______, _______,   KC_MPLY,   KC_MPRV,   KC_MNXT,  KC_BRMD,  KC_BRMU,  KC_VOLD, KC_VOLU, KC_MUTE, _______, _______,
     _______, _______, _______, _______, _______,  DVORAK, SDRK, _______, MU_ON,  MU_OFF, _______, _______
 ),
 
+};
+
+// Tapping Lower+Raise together (within COMBO_TERM) maximizes the window.
+// Holding them longer still falls through to the _ADJUST tri-layer.
+const uint16_t PROGMEM combo_max[]  = {LOWER,  RAISE,  COMBO_END};
+const uint16_t PROGMEM combo_smax[] = {SLOWER, SRAISE, COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(combo_max,  LCTL(LALT(KC_ENTER))),
+    COMBO(combo_smax, LCTL(LALT(KC_ENTER))),
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -203,13 +213,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 bool encoder_update_user(uint8_t index, bool clockwise) {
   if (clockwise) {
     #ifdef MOUSEKEY_ENABLE
-      tap_code(KC_MS_WH_DOWN);
+      tap_code(MS_WHLD);
     #else
       tap_code(KC_PGDN);
     #endif
   } else {
     #ifdef MOUSEKEY_ENABLE
-      tap_code(KC_MS_WH_UP);
+      tap_code(MS_WHLU);
     #else
       tap_code(KC_PGUP);
     #endif
